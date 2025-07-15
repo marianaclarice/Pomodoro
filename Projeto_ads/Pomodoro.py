@@ -1,4 +1,6 @@
 import time
+
+
 menu = """
 Olá! Seja Bem vindo(a) ao Projeto Pomodoro! 
 Abaixo está o nosso menu <3
@@ -20,7 +22,7 @@ while True:
         escolha = int(input('Escolha a opção que você deseja usar no Pomodoro - Digite apenas o número: '))
     except ValueError:
         print('Digite apenas números')
-        exit()
+        continue
 
     if escolha <=0 or escolha > 4:
         print('Digite um número que esteja nas opções do menu.')
@@ -57,17 +59,15 @@ while True:
 
         print('Pausa')
         time.sleep(pausa * 1)
+        
 
-        while True:
-            try:
-                voltar_menu = int(input("""
-                Você deseja voltar para o menu? 
-                                            
-                Se sim, digite 1. Se não, digite 2: 
-                """))
-            except ValueError:
-                print('Digite apenas números.')
-                continue
+    
+        try:
+            voltar_menu = int(input("""
+            Você deseja voltar para o menu? 
+                                        
+            Se sim, digite 1. Se não, digite 2: 
+            """))
 
             if voltar_menu == 1:
                 print('Você está voltando para o menu :) ')
@@ -77,8 +77,7 @@ while True:
             elif voltar_menu <= 0 or voltar_menu > 2:
                 print('Por favor, escolha 1(sim) ou 2(Não)')
                 continue
-                    
+        except ValueError:
+            print('Digite apenas números.')
+            continue
 
-
-
-        
