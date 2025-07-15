@@ -17,6 +17,7 @@ Menu
 while True:
     print(menu)
     print(' ')
+    cont = 0
 
     try:
         escolha = int(input('Escolha a opção que você deseja usar no Pomodoro - Digite apenas o número: '))
@@ -60,6 +61,12 @@ while True:
         print('Pausa')
         time.sleep(pausa * 1)
         
+        cont += 1
+        if cont == 1:
+            print(f'Você realizou {cont} ciclo!')
+        else:
+            print(f'Você realizou {cont} ciclos!')
+        print(' ')
 
     
         try:
