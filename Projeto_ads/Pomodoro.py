@@ -14,10 +14,10 @@ Menu
 3 - Editar
 4 - Sair
 """
+cont = 0
 while True:
     print(menu)
     print(' ')
-    cont = 0
 
     try:
         escolha = int(input('Escolha a opção que você deseja usar no Pomodoro - Digite apenas o número: '))
@@ -63,9 +63,9 @@ while True:
         
         cont += 1
         if cont == 1:
-            print(f'Você realizou {cont} ciclo!')
+            print(f'Parabéns! Você realizou {cont} ciclo!')
         else:
-            print(f'Você realizou {cont} ciclos!')
+            print(f'Parabéns! Você realizou {cont} ciclos!')
         print(' ')
 
     
