@@ -1,5 +1,7 @@
 import tkinter as tk
 import time
+import winsound
+
 
 def iniciar_pomodoro(foco, pausa):
     contagem_regressiva(foco * 60)
@@ -14,6 +16,7 @@ def contagem_regressiva(segundos):
         janela.update()
         time.sleep(1)
         segundos -= 1
+    som()
 
 def editar_tempos():
     foco_texto = entry_foco.get()
@@ -32,6 +35,13 @@ def mostrar_campos():
     label_pausa.place(relx=0.5, rely=0.75, anchor="center")
     entry_pausa.place(relx=0.5, rely=0.8, anchor="center")
     btn_confirmar.place(relx=0.5, rely=0.88, anchor="center")
+
+
+#Aqui é o som emitido
+def som():
+    for _ in range (5):
+        winsound.Beep(1000,500)
+        time.sleep(0.0001)
 
 ### Interface:
 janela = tk.Tk()
