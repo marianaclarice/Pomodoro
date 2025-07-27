@@ -1,5 +1,7 @@
 import tkinter as tk
 import time
+import winsound
+from PIL import Image, ImageTk
 
 def iniciar_pomodoro(foco, pausa):
     contagem_regressiva(foco * 60)
@@ -44,8 +46,14 @@ def som():
 ### Interface:
 janela = tk.Tk()
 janela.title("Interface")
-janela.geometry("500x300")
-janela.configure(bg="lightblue")
+janela.geometry("650x350")
+janela.configure(bg="lightpink")
+
+#Logo:
+imagem = Image.open("logo.png")
+imagem_tk = ImageTk.PhotoImage(imagem)
+logo_label = tk.Label(janela, image=imagem_tk, bg="lightpink")
+logo_label.pack(pady=20)
 
 entry_foco = tk.Entry(janela)
 entry_pausa = tk.Entry(janela)
