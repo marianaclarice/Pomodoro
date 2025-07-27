@@ -1,7 +1,5 @@
 import tkinter as tk
 import time
-import winsound
-
 
 def iniciar_pomodoro(foco, pausa):
     contagem_regressiva(foco * 60)
@@ -46,8 +44,8 @@ def som():
 ### Interface:
 janela = tk.Tk()
 janela.title("Interface")
-janela.geometry("600x400")
-janela.configure(bg="lightpink")
+janela.geometry("500x300")
+janela.configure(bg="lightblue")
 
 entry_foco = tk.Entry(janela)
 entry_pausa = tk.Entry(janela)
