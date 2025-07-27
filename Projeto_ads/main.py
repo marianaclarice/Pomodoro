@@ -46,22 +46,22 @@ def som():
 ### Interface:
 janela = tk.Tk()
 janela.title("Interface")
-janela.geometry("500x300")
-janela.configure(bg="lightblue")
+janela.geometry("600x400")
+janela.configure(bg="lightpink")
 
 entry_foco = tk.Entry(janela)
 entry_pausa = tk.Entry(janela)
-label_foco = tk.Label(janela, text="Minutos de foco:", bg="lightblue")
-label_pausa = tk.Label(janela, text="Minutos de pausa:", bg="lightblue")
+label_foco = tk.Label(janela, text="Minutos de foco:", bg="lightpink")
+label_pausa = tk.Label(janela, text="Minutos de pausa:", bg="lightpink")
 btn_confirmar = tk.Button(janela, text="Confirmar", command=editar_tempos)
 
-label = tk.Label(janela, text="Escolha a duração desejada:", font=("Lucida console", 13, "bold"), bg="lightblue")
+label = tk.Label(janela, text="Escolha a duração desejada:", font=("Comic Sans MS", 15, "bold"), bg="lightpink")
 label.place(relx=0.5, rely=0.35, anchor="center")
 
 def clicar():
     label.config()
 
-frame_botoes = tk.Frame(janela, bg="lightblue")
+frame_botoes = tk.Frame(janela, bg="lightpink")
 frame_botoes.place(relx=0.5, rely=0.55, anchor="center")
 
 btn1 = tk.Button(frame_botoes, text="25 x 5",command=lambda: iniciar_pomodoro(25, 5))
