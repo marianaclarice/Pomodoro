@@ -4,15 +4,16 @@ import winsound
 from PIL import Image, ImageTk
 
 def iniciar_pomodoro(foco, pausa):
-    contagem_regressiva(foco * 60)
-    contagem_regressiva(pausa * 60)
+    while True:
+        contagem_regressiva(foco * 60, "black") 
+        contagem_regressiva(pausa * 60, "teal")  
 
-def contagem_regressiva(segundos):
+def contagem_regressiva(segundos, cor):
     while segundos >= 0:
         minutos = segundos // 60
         seg = segundos % 60
         tempo_formatado = f"{minutos:02d}:{seg:02d}"
-        label.config(text=tempo_formatado)
+        label.config(text=tempo_formatado, fg=cor) 
         janela.update()
         time.sleep(1)
         segundos -= 1
@@ -27,7 +28,7 @@ def editar_tempos():
         pausa = int(pausa_texto)
         iniciar_pomodoro(foco, pausa)
     else:
-        label.config(text="Apenas números, por favor!")
+        label.config(text="Apenas números, por favor!", fg="red")
 
 def mostrar_campos():
     label_foco.place(relx=0.5, rely=0.65, anchor="center")
@@ -35,7 +36,6 @@ def mostrar_campos():
     label_pausa.place(relx=0.5, rely=0.75, anchor="center")
     entry_pausa.place(relx=0.5, rely=0.8, anchor="center")
     btn_confirmar.place(relx=0.5, rely=0.88, anchor="center")
-
 
 #Aqui é o som emitido
 def som():
@@ -61,7 +61,7 @@ label_foco = tk.Label(janela, text="Minutos de foco:", bg="lightpink")
 label_pausa = tk.Label(janela, text="Minutos de pausa:", bg="lightpink")
 btn_confirmar = tk.Button(janela, text="Confirmar", command=editar_tempos)
 
-label = tk.Label(janela, text="Escolha a duração desejada:", font=("Comic Sans MS", 15, "bold"), bg="lightpink")
+label = tk.Label(janela, text="Escolha a duração desejada:", font=("Comic Sans MS", 15, "bold"), bg="lightpink", fg="black")
 label.place(relx=0.5, rely=0.35, anchor="center")
 
 def clicar():
